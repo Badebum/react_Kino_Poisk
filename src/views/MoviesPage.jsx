@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class MoviesPage extends Component {
   state = {
@@ -9,7 +8,7 @@ class MoviesPage extends Component {
 
   async componentDidMount() {
     const response = await axios.get(
-      'https://api.themoviedb.org/3/trending/movie/week?api_key=630b46446de1400f6472aea120e587e9',
+      'https://api.themoviedb.org/3/trending/all/day?api_key=630b46446de1400f6472aea120e587e9',
     );
     console.log(response.data.results);
     this.setState({ movies: response.data.results });
@@ -20,16 +19,14 @@ class MoviesPage extends Component {
     return (
       <div>
         <ul>
-          {this.state.movies.map(({ id, title, poster_path }) => (
+          {this.state.movies.map(({ id, title, name, poster_path }) => (
             <li key={id}>
-              <Link to={`/home/${id}`}>
-                <img
-                  width="100px"
-                  src={`${srcImgFilm}${poster_path}`}
-                  alt={title}
-                />
-                {title}
-              </Link>
+              <img
+                src={`${srcImgFilm}${poster_path}`}
+                alt={title || name}
+                width="100px"
+              />
+              {title || name}
             </li>
           ))}
         </ul>
