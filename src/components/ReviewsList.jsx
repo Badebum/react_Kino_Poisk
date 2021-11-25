@@ -1,8 +1,8 @@
 import React from 'react';
 
 const ReviewsList = reviews => {
-  console.log(reviews);
-  console.log('!!!!!!!!!!!!!!!!!');
+  // console.log(reviews);
+  reviews.reviewsList.splice(5);
   return (
     <div>
       <ul>

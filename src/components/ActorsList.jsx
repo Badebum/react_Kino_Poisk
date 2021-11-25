@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ActorsList = castList => {
-  console.log(castList);
+  castList.cast.splice(10);
   return (
     <div>
       <ul>
