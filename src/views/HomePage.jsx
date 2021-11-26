@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import MovieList from '../components/MovieList/MovieList';
 
 class MoviesPage extends Component {
   state = {
@@ -16,23 +16,10 @@ class MoviesPage extends Component {
   }
 
   render() {
-    const srcImgFilm = `https://image.tmdb.org/t/p/w500`;
+    const { movies } = this.state;
     return (
       <div>
-        <ul>
-          {this.state.movies.map(({ id, title, poster_path }) => (
-            <li key={id}>
-              <Link to={`/home/${id}`}>
-                <img
-                  width="100px"
-                  src={`${srcImgFilm}${poster_path}`}
-                  alt={title}
-                />
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <MovieList movies={movies} />
       </div>
     );
   }

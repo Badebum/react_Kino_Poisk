@@ -49,10 +49,9 @@ class MovieDetailsPage extends Component {
       vote_average,
       genres,
       castList,
-      reviewsList,
     } = this.state;
 
-    const { match } = this.props;
+    const { url, path } = this.props.match;
     return (
       <div>
         <img width="100px" src={`${srcImgFilm}${poster_path}`} alt={title} />
@@ -66,21 +65,22 @@ class MovieDetailsPage extends Component {
             <li key={item.id}>{item.name}</li>
           ))}
         </ul>
+
         <ul>
           <li>
-            <NavLink exact to={`${match.url}/cast`}>
+            <NavLink exact to={`${url}/cast`}>
               Актёры
             </NavLink>
           </li>
           <li>
-            <NavLink exact to={`${match.url}/reviews`}>
+            <NavLink exact to={`${url}/reviews`}>
               Коментарий
             </NavLink>
           </li>
         </ul>
 
         <Route
-          path={`${match.path}/:movieId`}
+          path={`${path}/:movieId`}
           render={props => {
             const castList = this.state.castList;
             return castList && <ActorsList {...props} cast={castList} />;
@@ -88,7 +88,7 @@ class MovieDetailsPage extends Component {
         />
 
         <Route
-          path={`${match.path}/:movieId`}
+          path={`${path}/:movieId`}
           render={props => {
             const reviewsList = this.state.reviewsList;
             return (
