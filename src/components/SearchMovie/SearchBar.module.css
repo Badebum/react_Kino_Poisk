@@ -1,0 +1,13 @@
+.form__item {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.form__input {
+  padding: 10px;
+  width: 450px;
+}
+
+.sub__btn {
+  padding: 10px;
+}

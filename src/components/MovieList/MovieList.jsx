@@ -15,12 +15,14 @@ const MovieList = ({ movies, location }) => {
               state: { from: location },
             }}
           >
-            <img
-              src={poster_path ? `${srcImgFilm}${poster_path}` : null}
-              alt="poster_path"
-              width="250"
-            />
-            <div>{title}</div>
+            <div className={styles.item__card}>
+              <img
+                className={styles.img__item}
+                src={poster_path ? `${srcImgFilm}${poster_path}` : null}
+                alt="poster_path"
+              />
+              <h2 className={styles.titel__name}>{title}</h2>
+            </div>
           </NavLink>
         </li>
       ))}

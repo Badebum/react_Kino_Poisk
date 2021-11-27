@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './SearchBar.module.css';
 
 class SearchForm extends Component {
   state = {
@@ -20,7 +21,7 @@ class SearchForm extends Component {
     const { query } = this.state;
 
     return (
-      <form onSubmit={this.submitForm}>
+      <form className={styles.form__item} onSubmit={this.submitForm}>
         <input
           type="text"
           placeholder="Search film"
@@ -28,8 +29,9 @@ class SearchForm extends Component {
           value={query}
           autoFocus
           onChange={this.handleChangeQuery}
+          className={styles.form__input}
         />
-        <button type="submit">
+        <button type="submit" className={styles.sub__btn}>
           <span>Search</span>
         </button>
       </form>

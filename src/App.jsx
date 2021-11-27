@@ -1,16 +1,23 @@
 import React from 'react';
 import { Route, Switch, NavLink } from 'react-router-dom';
 import HomePage from './views/HomePage';
-import MovieDetailsPage from './views/MovieDetailsPage';
+import MovieDetailsPage from './views/MovieDetailsPage/MovieDetailsPage';
 import MoviesPage from './views/MoviesPage';
+import styles from './App.module.css';
 
 const App = () => {
   return (
     <div>
-      <ul>
-        <li>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/movies">Movies</NavLink>
+      <ul className={styles.nav__list}>
+        <li className={styles.nav__items}>
+          <NavLink className={styles.nav__link} to="/">
+            Home
+          </NavLink>
+        </li>
+        <li className={styles.nav__items}>
+          <NavLink className={styles.nav__link} to="/movies">
+            Movies
+          </NavLink>
         </li>
       </ul>
 

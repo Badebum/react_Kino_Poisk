@@ -15,9 +15,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   color: #212121;
-  background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(https://kinogo.biz/templates/Kinogo/images/IronMan3_.jpg) 50%
+    0 no-repeat #000;
 }
 
 img {
@@ -34,4 +35,20 @@ img {
   grid-template-columns: 1fr;
   grid-gap: 16px;
   padding-bottom: 24px;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+}
+
+.nav__items {
+  margin-right: 10px;
+}
+
+.nav__link {
+  text-decoration-line: none;
+  color: white;
+  padding: 10px;
+  font-size: large;
 }
