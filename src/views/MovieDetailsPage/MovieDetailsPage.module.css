@@ -18,3 +18,12 @@
 .description {
   width: 350px;
 }
+
+.back__btn {
+  background-color: initial;
+  border: 1px solid white;
+  color: white;
+  margin-left: 50px;
+  padding: 5px;
+  cursor: pointer;
+}

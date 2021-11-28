@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ActorList.module.css';
 
 const ActorsList = castList => {
-  castList.cast.splice(10);
+  castList.cast.splice(12);
   const srcImgFilm = `https://image.tmdb.org/t/p/w500`;
   console.log(castList);
   return (
